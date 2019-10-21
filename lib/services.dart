@@ -28,9 +28,9 @@ List<Vote> getVoteList() {
     voteId: Uuid().v4(),
     voteTitle: 'Best Mobile Frameworks?',
     options: [
-      {'Flutter': 0},
-      {'React Native': 0},
-      {'Xamarin': 0},
+      {'Flutter': 70},
+      {'React Native': 10},
+      {'Xamarin': 1},
     ],
   ));
 
@@ -38,9 +38,9 @@ List<Vote> getVoteList() {
     voteId: Uuid().v4(),
     voteTitle: 'Best Web Frontend Frameworks?',
     options: [
-      {'React': 0},
-      {'Angular': 0},
-      {'Vue': 0},
+      {'React': 80},
+      {'Angular': 40},
+      {'Vue': 20},
     ],
   ));
 
@@ -48,9 +48,9 @@ List<Vote> getVoteList() {
     voteId: Uuid().v4(),
     voteTitle: 'Best Web Backend Frameworks?',
     options: [
-      {'Django': 0},
-      {'Laravel': 0},
-      {'Express.js': 0},
+      {'Django': 50},
+      {'Laravel': 30},
+      {'Express.js': 50},
     ],
   ));
 

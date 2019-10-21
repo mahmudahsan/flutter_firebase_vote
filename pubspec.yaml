@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   uuid: 2.0.1
   provider: ^3.1.0+1
+  charts_flutter: ^0.8.1
 
 dev_dependencies:
   flutter_test:

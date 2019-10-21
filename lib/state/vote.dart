@@ -8,19 +8,18 @@ import "package:flutter_firebase_vote/models/vote.dart";
 import "package:flutter_firebase_vote/services.dart";
 
 class VoteState with ChangeNotifier {
-  List<Vote> _voteList;
+  List<Vote> _voteList = List<Vote>();
   Vote _activeVote;
   String _selectedOptionInActiveVote;
 
-  VoteState() {
-    loadVoteList();
+  void loadVoteList() async {
+    _voteList = getVoteList();
+    notifyListeners();
   }
 
-  void loadVoteList() {
-    _voteList = getVoteList();
+  void clearState() {
     _activeVote = null;
     _selectedOptionInActiveVote = null;
-    notifyListeners();
   }
 
   List<Vote> get voteList => _voteList;

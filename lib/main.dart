@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_vote/screens/result_screen.dart';
 import 'package:provider/provider.dart';
 import 'screens/launch_screen.dart';
 import 'screens/home_screen.dart';
@@ -27,6 +28,19 @@ class VoteApp extends StatelessWidget {
                   title: Text(kAppName),
                 ),
                 body: HomeScreeen(),
+              ),
+          '/result': (context) => Scaffold(
+                appBar: AppBar(
+                  title: Text('Result'),
+                  leading: IconButton(
+                    icon: Icon(Icons.home),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/home');
+                    },
+                  ),
+                ),
+                body: ResultScreen(),
               ),
         },
       ),

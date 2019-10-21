@@ -4,6 +4,7 @@
  */
 import "package:flutter/material.dart";
 import 'package:flutter_firebase_vote/state/vote.dart';
+import 'package:flutter_firebase_vote/screens/result_screen.dart';
 import "package:provider/provider.dart";
 import "../widgets/vote_list.dart";
 import "../widgets/vote.dart";
@@ -17,6 +18,16 @@ class HomeScreeen extends StatefulWidget {
 
 class _HomeScreeenState extends State<HomeScreeen> {
   int _currentStep = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // loading votes
+    Future.microtask(() {
+      Provider.of<VoteState>(context).clearState();
+      Provider.of<VoteState>(context, listen: false).loadVoteList();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +52,6 @@ class _HomeScreeenState extends State<HomeScreeen> {
                         title: 'Vote',
                         child: VoteWidget(),
                         isActive: _currentStep >= 1 ? true : false,
-                      ),
-                      getStep(
-                        title: 'Result',
-                        child: Text('hi'),
-                        isActive: _currentStep >= 2 ? true : false,
                       ),
                     ],
                     onStepCancel: () {
@@ -73,10 +79,8 @@ class _HomeScreeenState extends State<HomeScreeen> {
                         }
                       } else if (_currentStep == 1) {
                         if (step3Required()) {
-                          setState(() {
-                            _currentStep =
-                                (_currentStep + 1) > 2 ? 2 : _currentStep + 1;
-                          });
+                          // Go To Result Screen
+                          Navigator.pushReplacementNamed(context, '/result');
                         } else {
                           showSnackBar(context, 'Please mark your vote!');
                         }

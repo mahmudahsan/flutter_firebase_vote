@@ -34,15 +34,26 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
 
 ### Widgets
 
-- [Radio Class](https://api.flutter.dev/flutter/material/Radio-class.html)
+>  [Widget Index](https://flutter.dev/docs/reference/widgets)
+
 - [Stepper Class](https://api.flutter.dev/flutter/material/Stepper-class.html)
-- [Widget Index](https://flutter.dev/docs/reference/widgets)
+- [MaterialApp](https://api.flutter.dev/flutter/material/MaterialApp-class.html)
+- [Scaffold](https://api.flutter.dev/flutter/material/Scaffold-class.html)
+- [Container](https://api.flutter.dev/flutter/widgets/Container-class.html)
+- [Column](https://api.flutter.dev/flutter/widgets/Column-class.html)
+- [Row](https://api.flutter.dev/flutter/widgets/Row-class.html)
+- [Expanded](https://api.flutter.dev/flutter/widgets/Expanded-class.html)
+- [LimitedBox](https://api.flutter.dev/flutter/widgets/LimitedBox-class.html)
+- [IntrinsicHeight](https://api.flutter.dev/flutter/widgets/IntrinsicHeight-class.html)
+- [InkWell](https://api.flutter.dev/flutter/material/InkWell-class.html)
+
 
 ### 3rd Party Libraries
 
 - [UUID](https://pub.dev/packages/uuid)
 - [Provider](https://pub.dev/packages/provider)
-- [Chart Gallery](https://google.github.io/charts/flutter/gallery.html)
+- [Charts Flutter](https://pub.dev/packages/charts_flutter)
+    - [Chart Gallery](https://google.github.io/charts/flutter/gallery.html)
 
 
 ### Flutter Tutorials Beginners
