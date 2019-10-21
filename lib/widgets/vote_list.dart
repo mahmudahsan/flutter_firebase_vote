@@ -7,12 +7,12 @@ import 'package:provider/provider.dart';
 import 'package:flutter_firebase_vote/state/vote.dart';
 import "package:flutter_firebase_vote/models/vote.dart";
 
-class VoteList extends StatelessWidget {
-  String selectedVoteId;
-
+class VoteListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Function alternateColor = getAlternate(start: 0);
+    String activeVoteId =
+        Provider.of<VoteState>(context).activeVote?.voteId ?? '';
 
     return Consumer<VoteState>(
       builder: (context, voteState, child) {
@@ -27,22 +27,23 @@ class VoteList extends StatelessWidget {
                       vote.voteTitle,
                       style: TextStyle(
                         fontSize: 18,
-                        color: selectedVoteId == vote.voteId
+                        color: activeVoteId == vote.voteId
                             ? Colors.white
                             : Colors.black,
-                        fontWeight: selectedVoteId == vote.voteId
+                        fontWeight: activeVoteId == vote.voteId
                             ? FontWeight.bold
                             : FontWeight.normal,
                       ),
                     ),
                   ),
-                  selected: selectedVoteId == vote.voteId ? true : false,
+                  selected: activeVoteId == vote.voteId ? true : false,
                   onTap: () {
-                    selectedVoteId = vote.voteId;
                     Provider.of<VoteState>(context).activeVote = vote;
                   },
                 ),
-                color: alternateColor(),
+                color: activeVoteId == vote.voteId
+                    ? Colors.red[200]
+                    : alternateColor(),
               ),
           ],
         );

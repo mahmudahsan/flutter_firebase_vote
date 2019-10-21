@@ -6,7 +6,7 @@ import "package:flutter/material.dart";
 import 'package:flutter_firebase_vote/state/vote.dart';
 import "package:provider/provider.dart";
 import "../widgets/vote_list.dart";
-import "../widgets/vote.dart" as VoteWidget;
+import "../widgets/vote.dart";
 import "../models/vote.dart";
 import "../state/vote.dart";
 
@@ -20,54 +20,74 @@ class _HomeScreeenState extends State<HomeScreeen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            child: Stepper(
-              type: StepperType.horizontal,
-              currentStep: _currentStep,
-              steps: [
-                getStep(
-                  title: 'Choose',
-                  child: VoteList(),
-                  isActive: true,
-                ),
-                getStep(
-                  title: 'Vote',
-                  child: VoteWidget.Vote(),
-                  isActive: _currentStep >= 1 ? true : false,
-                ),
-                getStep(
-                  title: 'Result',
-                  child: Text('hi'),
-                  isActive: _currentStep >= 2 ? true : false,
+    return Center(
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: Stepper(
+                    type: StepperType.horizontal,
+                    currentStep: _currentStep,
+                    steps: [
+                      getStep(
+                        title: 'Choose',
+                        child: VoteListWidget(),
+                        isActive: true,
+                      ),
+                      getStep(
+                        title: 'Vote',
+                        child: VoteWidget(),
+                        isActive: _currentStep >= 1 ? true : false,
+                      ),
+                      getStep(
+                        title: 'Result',
+                        child: Text('hi'),
+                        isActive: _currentStep >= 2 ? true : false,
+                      ),
+                    ],
+                    onStepCancel: () {
+                      if (_currentStep <= 0) {
+                        Provider.of<VoteState>(context).activeVote = null;
+                      } else if (_currentStep <= 1) {
+                        Provider.of<VoteState>(context)
+                            .selectedOptionInActiveVote = null;
+                      }
+
+                      setState(() {
+                        _currentStep =
+                            (_currentStep - 1) < 0 ? 0 : _currentStep - 1;
+                      });
+                    },
+                    onStepContinue: () {
+                      if (_currentStep == 0) {
+                        if (step2Required()) {
+                          setState(() {
+                            _currentStep =
+                                (_currentStep + 1) > 2 ? 2 : _currentStep + 1;
+                          });
+                        } else {
+                          showSnackBar(context, 'Please select a vote first!');
+                        }
+                      } else if (_currentStep == 1) {
+                        if (step3Required()) {
+                          setState(() {
+                            _currentStep =
+                                (_currentStep + 1) > 2 ? 2 : _currentStep + 1;
+                          });
+                        } else {
+                          showSnackBar(context, 'Please mark your vote!');
+                        }
+                      }
+                    },
+                  ),
                 ),
               ],
-              onStepCancel: () {
-                setState(() {
-                  _currentStep = (_currentStep - 1) < 0 ? 0 : _currentStep - 1;
-                });
-              },
-              onStepContinue: () {
-                if (_currentStep >= 0 && step2Required()) {
-                  setState(() {
-                    _currentStep =
-                        (_currentStep + 1) > 2 ? 2 : _currentStep + 1;
-                  });
-                }
-              },
-              onStepTapped: (int value) {
-                if (step2Required()) {
-                  setState(() {
-                    _currentStep = value;
-                  });
-                }
-              },
             ),
           ),
-        ],
+        ),
       ),
     );
   }
@@ -78,6 +98,22 @@ class _HomeScreeenState extends State<HomeScreeen> {
     }
 
     return true;
+  }
+
+  bool step3Required() {
+    if (Provider.of<VoteState>(context).selectedOptionInActiveVote == null) {
+      return false;
+    }
+    return true;
+  }
+
+  void showSnackBar(BuildContext context, String msg) {
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text(
+        msg,
+        style: TextStyle(fontSize: 22),
+      ),
+    ));
   }
 
   Step getStep({

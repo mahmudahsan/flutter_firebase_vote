@@ -10,7 +10,7 @@ class LoginButton extends StatelessWidget {
   double size;
   Function onPressed;
 
-  LoginButton({this.label, this.size = 300.0, this.onPressed = null});
+  LoginButton({this.label, this.size = 300.0, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
