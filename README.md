@@ -24,11 +24,21 @@ For state management we used, [Provider](https://pub.dev/packages/provider).
 If you need to know how to use [Provider](https://pub.dev/packages/provider), please
 check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV8MAso)
 
+### Demo 1.0
+
+<p align="center">
+    <img src="demo1.jpg" alt="Demo" />
+</p>
+
 ### Features
 
+> Version 1.0
+- Prototype of Application with Mock Data
+
+> Version 2.0
  1. User can sign in
  2. User can see vote List from Firebase
- 3. A user can not vote for an option more than one time
+ 3. User can vote
  4. User can see result
  5. User can share screenshot in social media
 
