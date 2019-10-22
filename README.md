@@ -61,6 +61,9 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
 2. [Flutter for Beginners - Creating First App](https://www.youtube.com/watch?v=HFl29MoZ6MA&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=3&t=0s)
 3. [How to Create a Profile Page App](https://www.youtube.com/watch?v=ULxYR66BRb4&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=5&t=0s)
 
+### Intermediate Dart Knowledge
+1. [What is Future and Async](https://www.youtube.com/watch?v=8KOdOXRboh8&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=12&t=0s)
+
 ### Resources
 
 - [Official Site](https://flutter.dev/)

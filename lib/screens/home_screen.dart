@@ -7,7 +7,6 @@ import 'package:flutter_firebase_vote/state/vote.dart';
 import "package:provider/provider.dart";
 import "../widgets/vote_list.dart";
 import "../widgets/vote.dart";
-import "../models/vote.dart";
 import "../state/vote.dart";
 
 class HomeScreeen extends StatefulWidget {

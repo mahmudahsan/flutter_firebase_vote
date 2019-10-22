@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-
 /**
  * Created by Mahmud Ahsan
  * https://github.com/mahmudahsan
  */
+import 'package:flutter/material.dart';
 
 class LoginButton extends StatelessWidget {
   String label;
