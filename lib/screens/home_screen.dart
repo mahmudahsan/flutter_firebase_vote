@@ -130,19 +130,4 @@ class _HomeScreeenState extends State<HomeScreeen> {
       isActive: isActive,
     );
   }
-
-  Column getOptions({Vote vote}) {
-    return Column(
-      children: <Widget>[
-        for (var option in vote.options)
-          ListTile(
-            title: Text(option.keys.first),
-            leading: Radio(
-              value: option.values.first,
-              groupValue: vote.voteId,
-            ),
-          ),
-      ],
-    );
-  }
 }
