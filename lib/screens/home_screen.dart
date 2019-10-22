@@ -23,7 +23,7 @@ class _HomeScreeenState extends State<HomeScreeen> {
     super.initState();
     // loading votes
     Future.microtask(() {
-      Provider.of<VoteState>(context).clearState();
+      Provider.of<VoteState>(context, listen: false).clearState();
       Provider.of<VoteState>(context, listen: false).loadVoteList();
     });
   }
