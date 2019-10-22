@@ -4,7 +4,6 @@
  */
 import "package:flutter/material.dart";
 import 'package:flutter_firebase_vote/state/vote.dart';
-import 'package:flutter_firebase_vote/screens/result_screen.dart';
 import "package:provider/provider.dart";
 import "../widgets/vote_list.dart";
 import "../widgets/vote.dart";
@@ -31,7 +30,7 @@ class _HomeScreeenState extends State<HomeScreeen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Container(
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
