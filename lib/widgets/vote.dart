@@ -14,10 +14,11 @@ class VoteWidget extends StatelessWidget {
     Vote activeVote = Provider.of<VoteState>(context).activeVote;
     List<String> options = List<String>();
 
-    for (Map<String, int> option in activeVote.options)
+    for (Map<String, int> option in activeVote.options) {
       option.forEach((title, value) {
         options.add(title);
       });
+    }
 
     return Column(
       children: <Widget>[
