@@ -5,8 +5,8 @@
     <a href="https://www.youtube.com/channel/UCtHlgyUw0wLE5Ous9swfFlg">
         <img src="https://img.shields.io/badge/my-youtube channel-red.svg" alt="Youtube" />
     </a>
-    <a href="https://thinkdiff.net/?s=flutter">
-        <img src="https://img.shields.io/badge/blog-thinkdiff.net-brightgreen.svg" alt="thinkdiff.net" />
+    <a href="https://flutterbook.net/">
+        <img src="https://img.shields.io/badge/tutorial-flutterbook.net-brightgreen.svg" alt="https://flutterbook.net/" />
     </a>
     <a href="https://ithinkdiff.net/">
         <img src="https://img.shields.io/badge/mobile-apps-yellow.svg" alt="ithinkdiff.net" />
@@ -18,6 +18,7 @@
 
 
 # Vote - A full Flutter Application
+[Video Tutorial](https://www.youtube.com/watch?v=Iu9DpbzR83s)
 
 A flutter and firebase based vote application. 
 For state management we used, [Provider](https://pub.dev/packages/provider). 
