@@ -42,6 +42,11 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
  3. User can vote
  4. User can see result
  5. User can share screenshot in social media
+ 
+ ### Authentication Flow Chart
+ <p align="center">
+     <img src="authentication.png" alt="authentication" />
+ </p>
 
 ### Widgets
 
@@ -65,6 +70,10 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
 - [Provider](https://pub.dev/packages/provider)
 - [Charts Flutter](https://pub.dev/packages/charts_flutter)
     - [Chart Gallery](https://google.github.io/charts/flutter/gallery.html)
+- [Firebase Auth](https://pub.dev/packages/firebase_auth)
+- [Google Sign In](https://pub.dev/packages/google_sign_in)
+    - [Firebase Plugins](https://github.com/FirebaseExtended/flutterfire)
+
 
 
 ### Flutter Tutorials Beginners

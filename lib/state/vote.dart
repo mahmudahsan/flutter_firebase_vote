@@ -5,7 +5,7 @@
 
 import "package:flutter/material.dart";
 import "package:flutter_firebase_vote/models/vote.dart";
-import "package:flutter_firebase_vote/services.dart";
+import 'package:flutter_firebase_vote/services/services.dart';
 
 class VoteState with ChangeNotifier {
   List<Vote> _voteList = List<Vote>();
