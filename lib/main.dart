@@ -5,6 +5,8 @@ import 'screens/launch_screen.dart';
 import 'screens/home_screen.dart';
 import 'constants.dart';
 import 'package:flutter_firebase_vote/state/vote.dart';
+import 'package:flutter_firebase_vote/state/authentication.dart';
+import 'package:flutter_firebase_vote/utilities.dart';
 
 void main() => runApp(VoteApp());
 
@@ -16,6 +18,9 @@ class VoteApp extends StatelessWidget {
         ChangeNotifierProvider(
           builder: (_) => VoteState(),
         ),
+        ChangeNotifierProvider(
+          builder: (_) => AuthenticationState(),
+        ),
       ],
       child: MaterialApp(
         initialRoute: '/',
@@ -26,6 +31,9 @@ class VoteApp extends StatelessWidget {
           '/home': (context) => Scaffold(
                 appBar: AppBar(
                   title: Text(kAppName),
+                  actions: <Widget>[
+                    getActions(context),
+                  ],
                 ),
                 body: HomeScreeen(),
               ),
@@ -39,11 +47,32 @@ class VoteApp extends StatelessWidget {
                       Navigator.pushReplacementNamed(context, '/home');
                     },
                   ),
+                  actions: <Widget>[
+                    getActions(context),
+                  ],
                 ),
                 body: ResultScreen(),
               ),
         },
       ),
+    );
+  }
+
+  PopupMenuButton getActions(BuildContext context) {
+    return PopupMenuButton<int>(
+      itemBuilder: (context) => [
+        PopupMenuItem(
+          value: 1,
+          child: Text('Logout'),
+        )
+      ],
+      onSelected: (value) {
+        if (value == 1) {
+          // logout
+          Provider.of<AuthenticationState>(context, listen: false).logout();
+          gotoLoginScreen(context);
+        }
+      },
     );
   }
 }
