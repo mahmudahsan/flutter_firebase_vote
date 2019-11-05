@@ -33,15 +33,11 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
 
 ### Features
 
-> Version 1.0
-- Prototype of Application with Mock Data
-
 > Version 2.0
  1. User can sign in
  2. User can see vote List from Firebase
  3. User can vote
  4. User can see result
- 5. User can share screenshot in social media
  
  ### Authentication Flow Chart
  <p align="center">
