@@ -42,6 +42,11 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
  3. User can vote
  4. User can see result
  5. User can share screenshot in social media
+ 
+ ### Authentication Flow Chart
+ <p align="center">
+     <img src="authentication.png" alt="authentication" />
+ </p>
 
 ### Widgets
 
@@ -65,20 +70,18 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
 - [Provider](https://pub.dev/packages/provider)
 - [Charts Flutter](https://pub.dev/packages/charts_flutter)
     - [Chart Gallery](https://google.github.io/charts/flutter/gallery.html)
+- [Firebase Auth](https://pub.dev/packages/firebase_auth)
+    - [Firebase Setup](https://firebase.google.com/docs/flutter/setup)
+- [Google Sign In](https://pub.dev/packages/google_sign_in)
+    - [Firebase Plugins](https://github.com/FirebaseExtended/flutterfire)
+    
 
 
-### Flutter Tutorials Beginners
-1. [Dart Programming Language for Beginners](https://www.youtube.com/watch?v=Ej_Pcr4uC2Q&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=2&t=10s)
-2. [Flutter for Beginners - Creating First App](https://www.youtube.com/watch?v=HFl29MoZ6MA&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=3&t=0s)
-3. [How to Create a Profile Page App](https://www.youtube.com/watch?v=ULxYR66BRb4&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=5&t=0s)
+### Learn Flutter by video Tutorials
+- [FlutterBook.net](https://flutterbook.net)
 
-### Intermediate Dart Knowledge
-1. [What is Future and Async](https://www.youtube.com/watch?v=8KOdOXRboh8&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=12&t=0s)
-2. [Provider - Global State Manage](https://www.youtube.com/watch?v=fEIdWV8MAso)
-
-### More Tutorials / Links
+### Github Code for Tutorials
 - [Flutter by Mahmud Ahsan](https://github.com/mahmudahsan/flutter)
-
 
 ### Resources
 
