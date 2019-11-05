@@ -25,7 +25,11 @@ For state management we used, [Provider](https://pub.dev/packages/provider).
 If you need to know how to use [Provider](https://pub.dev/packages/provider), please
 check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV8MAso)
 
-### Demo 1.0
+### Demo 2.0
+
+<p align="center">
+    <img src="demo2.gif" alt="Firebase auth" />
+</p>
 
 <p align="center">
     <img src="demo1.jpg" alt="Demo" />
