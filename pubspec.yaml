@@ -28,6 +28,8 @@ dependencies:
   charts_flutter: ^0.8.1
   firebase_auth: ^0.14.0+5
   google_sign_in: ^4.0.7
+  cloud_firestore: ^0.12.9+6
+  loading: ^1.0.1
 
 dev_dependencies:
   flutter_test:

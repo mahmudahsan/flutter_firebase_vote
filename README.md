@@ -74,6 +74,8 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
     - [Firebase Setup](https://firebase.google.com/docs/flutter/setup)
 - [Google Sign In](https://pub.dev/packages/google_sign_in)
     - [Firebase Plugins](https://github.com/FirebaseExtended/flutterfire)
+- [Cloud Firestore](https://pub.dev/packages/cloud_firestore)
+- [Loading](https://pub.dev/packages/loading)
     
 
 
