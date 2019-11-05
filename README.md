@@ -28,7 +28,7 @@ check the [following tutorial on Youtube](https://www.youtube.com/watch?v=fEIdWV
 ### Demo 2.0
 
 <p align="center">
-    <img src="demo2.gif" alt="Firebase auth" />
+    <img src="demo3.gif" alt="Firebase auth" />
 </p>
 
 <p align="center">
