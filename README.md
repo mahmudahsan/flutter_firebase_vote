@@ -18,7 +18,8 @@
 
 
 # Vote - A full Flutter Application
-[Video Tutorial](https://www.youtube.com/watch?v=Iu9DpbzR83s)
+[Video Tutorial # 1](https://www.youtube.com/watch?v=Iu9DpbzR83s)
+[Video Tutorial # 2](https://youtu.be/N6DF-zz9c6o)
 
 A flutter and firebase based vote application. 
 For state management we used, [Provider](https://pub.dev/packages/provider). 
