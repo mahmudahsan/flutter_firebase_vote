@@ -136,8 +136,33 @@ https://stackoverflow.com/questions/15727912/sha-1-fingerprint-of-keystore-certi
 - [Loading](https://pub.dev/packages/loading)
     
 
-### Github Code for Tutorials
-- [Flutter by Mahmud Ahsan](https://github.com/mahmudahsan/flutter)
+### Tutorials
+1. [Youtube - Flutter Playlist 1](https://www.youtube.com/playlist?list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ)
+2. [Youtube - Flutter Playlist 2](https://www.youtube.com/playlist?list=PLlMOodDAsO4zQ243zMHKKrV316PJU9q0E)
+
+### Flutter Full Application
+1. [Vote](https://git.io/JeRjb) | [Tutorial](https://www.youtube.com/watch?v=Iu9DpbzR83s&list=PLlMOodDAsO4zQ243zMHKKrV316PJU9q0E&index=2&t=0s)
+2. [Todos](https://github.com/mahmudahsan/flutter_todos) | [Tutorial](https://youtu.be/OQG3MxenJsM)
+
+### Flutter Tutorials Beginners
+1. [Dart Programming Language for Beginners](https://www.youtube.com/watch?v=Ej_Pcr4uC2Q&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=2&t=10s)
+2. [Flutter for Beginners - Creating First App](https://www.youtube.com/watch?v=HFl29MoZ6MA&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=3&t=0s)
+3. [How to Create a Profile Page App](https://www.youtube.com/watch?v=ULxYR66BRb4&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=5&t=0s)
+
+### Flutter Tutorials Managing States
+
+1. [Stateful Widget](https://www.youtube.com/watch?v=8iHfqfHclTQ&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=17&t=0s)
+2. [State: Provider](https://git.io/Je4ZP) | [Tutorial](https://www.youtube.com/watch?v=fEIdWV8MAso)
+3. [State: Redux](https://git.io/Je4Z6) | [Tutorial](https://www.youtube.com/watch?v=vzCszJQ_qZQ&t=793s)
+4. [State: Bloc](https://git.io/Je4s5) | [Tutorial](https://youtu.be/BHC_D52TecY)
+
+### Flutter Mixed
+- [Form](flutter/form) | [Tutorial](https://www.youtube.com/watch?v=S-nLT3TRJFY&t=1646s)
+
+### Quick Reference
+
+1. [Dart Language](dart/) | [Video](https://www.youtube.com/watch?v=Ej_Pcr4uC2Q&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=3)
+2. [Flutter](flutter/) | [Video](https://www.youtube.com/playlist?list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ)
 
 ### Resources
 
