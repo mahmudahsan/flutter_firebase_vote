@@ -18,8 +18,9 @@
 - [Video Tutorial 1: Building the app](https://www.youtube.com/watch?v=Iu9DpbzR83s)
 - [Video Tutorial 2: Add Firebase Authentication and Firestore Database](https://youtu.be/N6DF-zz9c6o)
 - [Video Tutorial 3: Migrating Provider 4.0 and Fix Android Firebase Authentication issues]() Coming Soon
-- [Migration to Provider 4.0](#migration-to-provider-4)
-- [Firebase configuration for android](#firebase-configuration-for-android)
+
+> - [Migration to Provider 4.0](#migration-to-provider-4)
+> - [Firebase configuration for android](#firebase-configuration-for-android)
 
 > A flutter and firebase based vote application. 
 For state management we used, [Provider](https://pub.dev/packages/provider). 
