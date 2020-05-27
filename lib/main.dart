@@ -14,51 +14,50 @@ class VoteApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          builder: (_) => VoteState(),
-        ),
-        ChangeNotifierProvider(
-          builder: (_) => AuthenticationState(),
-        ),
-      ],
-      child: MaterialApp(
-        initialRoute: '/',
-        routes: {
-          '/': (context) => Scaffold(
-                body: LaunchScreen(),
-              ),
-          '/home': (context) => Scaffold(
-                appBar: AppBar(
-                  title: Text(kAppName),
-                  actions: <Widget>[
-                    getActions(context),
-                  ],
-                ),
-                body: HomeScreeen(),
-              ),
-          '/result': (context) => Scaffold(
-                appBar: AppBar(
-                  title: Text('Result'),
-                  leading: IconButton(
-                    icon: Icon(Icons.home),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/home');
-                    },
+        providers: [
+          ChangeNotifierProvider(create: (_) => VoteState()),
+          ChangeNotifierProvider(create: (_) => AuthenticationState()),
+        ],
+        child:
+            Consumer<AuthenticationState>(builder: (context, authState, child) {
+          return MaterialApp(
+            initialRoute: '/',
+            routes: {
+              '/': (context) => Scaffold(
+                    body: LaunchScreen(),
                   ),
-                  actions: <Widget>[
-                    getActions(context),
-                  ],
-                ),
-                body: ResultScreen(),
-              ),
-        },
-      ),
-    );
+              '/home': (context) => Scaffold(
+                    appBar: AppBar(
+                      title: Text(kAppName),
+                      actions: <Widget>[
+                        getActions(context, authState),
+                      ],
+                    ),
+                    body: HomeScreeen(),
+                  ),
+              '/result': (context) => Scaffold(
+                    appBar: AppBar(
+                      title: Text('Result'),
+                      leading: IconButton(
+                        icon: Icon(Icons.home),
+                        color: Colors.white,
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/home');
+                        },
+                      ),
+                      actions: <Widget>[
+                        getActions(context, authState),
+                      ],
+                    ),
+                    body: ResultScreen(),
+                  )
+            },
+          );
+        }));
   }
 
-  PopupMenuButton getActions(BuildContext context) {
+  PopupMenuButton getActions(
+      BuildContext context, AuthenticationState authState) {
     return PopupMenuButton<int>(
       itemBuilder: (context) => [
         PopupMenuItem(
@@ -69,8 +68,8 @@ class VoteApp extends StatelessWidget {
       onSelected: (value) {
         if (value == 1) {
           // logout
-          Provider.of<AuthenticationState>(context, listen: false).logout();
-          gotoLoginScreen(context);
+          authState.logout();
+          gotoLoginScreen(context, authState);
         }
       },
     );
