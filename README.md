@@ -163,8 +163,8 @@ https://stackoverflow.com/questions/15727912/sha-1-fingerprint-of-keystore-certi
 
 ### Quick Reference
 
-1. [Dart Language](dart/) | [Video](https://www.youtube.com/watch?v=Ej_Pcr4uC2Q&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=3)
-2. [Flutter](flutter/) | [Video](https://www.youtube.com/playlist?list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ)
+1. [Dart Language](https://github.com/mahmudahsan/flutter/tree/master/dart) | [Video](https://www.youtube.com/watch?v=Ej_Pcr4uC2Q&list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ&index=3)
+2. [Flutter](https://github.com/mahmudahsan/flutter/tree/master/flutter) | [Video](https://www.youtube.com/playlist?list=PLlMOodDAsO4xrTgVEkKXfVf7sSVEsmWKQ)
 
 ### Resources
 
