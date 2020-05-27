@@ -58,7 +58,7 @@ For state management we used, [Provider](https://pub.dev/packages/provider).
 
  ### Migration to Provider 4
  - [Update Provider 3.0 to 4.0](https://pub.dev/packages/provider)
- - Changes committed [Coming Soon]()
+ - [Changes committed](https://github.com/mahmudahsan/flutter_firebase_vote/commit/0f82330911cb3b4b398488cf00dbf5a7b4ada337)
 
  ### Firebase configuration for android
  > Firebase authentication is very critical for android. If you don't do the following things the app will not work on android. Also if you found any error, search in Google.
