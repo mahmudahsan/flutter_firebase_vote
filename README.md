@@ -146,7 +146,7 @@ https://stackoverflow.com/questions/15727912/sha-1-fingerprint-of-keystore-certi
 
 
 ## Support
-If it helps you, please give a star in this repo. Also support my by subscribing my [youtube channel](https://www.youtube.com/channel/UCtHlgyUw0wLE5Ous9swfFlg). 
+If it helps you, please give a ***star*** in this repo. Also you can support me by subscribing my [youtube channel](https://www.youtube.com/channel/UCtHlgyUw0wLE5Ous9swfFlg). 
 
 ## Questions or feedback?
 
