@@ -62,6 +62,8 @@ For state management we used, [Provider](https://pub.dev/packages/provider).
  - [Changes committed](https://github.com/mahmudahsan/flutter_firebase_vote/commit/0f82330911cb3b4b398488cf00dbf5a7b4ada337)
 
  ### Firebase configuration for android
+ ***Sometimes firebase and google auth doesn't work on Android Emulators, so preferred way to to test in a real device***
+ 
  > Firebase authentication is very critical for android. If you don't do the following things the app will not work on android. Also if you found any error, search in Google.
  
  > To know more about how to add ***Firebase Auth, Google Auth and Firestore*** in a Flutter app [check the video tutorial](https://youtu.be/N6DF-zz9c6o) 
