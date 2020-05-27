@@ -62,6 +62,8 @@ For state management we used, [Provider](https://pub.dev/packages/provider).
 
  ### Firebase configuration for android
  > Firebase authentication is very critical for android. If you don't do the following things the app will not work on android. Also if you found any error, search in Google.
+ 
+ > To know more about how to add ***Firebase Auth, Google Auth and Firestore*** in a Flutter app [check the video tutorial](https://youtu.be/N6DF-zz9c6o) 
 
  - Update all 3rd party libraries in pubspec.yaml
  - Add android app in the firebase. To change or know the android application id open the file `android/app/build.gradle` or check from `android/app/src/main/AndroidManifest.xml` to get the application id
