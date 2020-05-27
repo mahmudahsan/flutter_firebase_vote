@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:694052778285:ios:93d7f8fdf1504e766923a4</string>
+	<string>1:694052778285:ios:ade67d268c6f1c8f6923a4</string>
 	<key>DATABASE_URL</key>
 	<string>https://vote-prep.firebaseio.com</string>
 </dict>

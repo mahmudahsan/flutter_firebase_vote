@@ -11,11 +11,10 @@ class VoteListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Function alternateColor = getAlternate(start: 0);
-    String activeVoteId =
-        Provider.of<VoteState>(context).activeVote?.voteId ?? '';
-
     return Consumer<VoteState>(
       builder: (context, voteState, child) {
+        String activeVoteId = voteState.activeVote?.voteId ?? '';
+
         return Column(
           children: <Widget>[
             for (Vote vote in voteState.voteList)
@@ -38,7 +37,7 @@ class VoteListWidget extends StatelessWidget {
                   ),
                   selected: activeVoteId == vote.voteId ? true : false,
                   onTap: () {
-                    Provider.of<VoteState>(context).activeVote = vote;
+                    voteState.activeVote = vote;
                   },
                 ),
                 color: activeVoteId == vote.voteId

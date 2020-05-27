@@ -12,10 +12,10 @@ import 'package:flutter_firebase_vote/utilities.dart';
 class LaunchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    gotoHomeScreen(context);
-
     return Consumer<AuthenticationState>(
       builder: (builder, authState, child) {
+        print(authState.authStatus);
+        gotoHomeScreen(context, authState);
         return Container(
           width: 400,
           margin: EdgeInsets.all(20.0),
@@ -48,14 +48,16 @@ class LaunchScreen extends StatelessWidget {
                     children: <Widget>[
                       LoginButton(
                         label: 'Google Sign In',
-                        onPressed: () => signIn(context, kAuthSignInGoogle),
+                        onPressed: () =>
+                            signIn(context, kAuthSignInGoogle, authState),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       LoginButton(
                         label: 'Anonymous Sign In',
-                        onPressed: () => signIn(context, kAuthSignInAnonymous),
+                        onPressed: () =>
+                            signIn(context, kAuthSignInAnonymous, authState),
                       ),
                     ],
                   ),
@@ -72,9 +74,8 @@ class LaunchScreen extends StatelessWidget {
     );
   }
 
-  void signIn(context, String service) {
+  void signIn(context, String service, AuthenticationState authState) {
     //Navigator.pushReplacementNamed(context, '/home');
-    Provider.of<AuthenticationState>(context, listen: true)
-        .login(serviceName: service);
+    authState.login(serviceName: service);
   }
 }

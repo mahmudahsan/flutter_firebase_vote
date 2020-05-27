@@ -36,93 +36,93 @@ class _HomeScreeenState extends State<HomeScreeen> {
     return Container(
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            child: Column(
-              children: <Widget>[
-                if (Provider.of<VoteState>(context, listen: false).voteList ==
-                    null)
-                  Container(
-                    color: Colors.lightBlue,
-                    child: Center(
-                      child:
-                          Loading(indicator: BallPulseIndicator(), size: 100.0),
-                    ),
-                  ),
-                if (Provider.of<VoteState>(context, listen: true).voteList !=
-                    null)
-                  Expanded(
-                    child: Stepper(
-                      type: StepperType.horizontal,
-                      currentStep: _currentStep,
-                      steps: [
-                        getStep(
-                          title: 'Choose',
-                          child: VoteListWidget(),
-                          isActive: true,
+            padding: const EdgeInsets.all(8.0),
+            child: Consumer<VoteState>(builder: (builder, voteState, child) {
+              return Container(
+                child: Column(
+                  children: <Widget>[
+                    if (voteState.voteList == null)
+                      Container(
+                        color: Colors.lightBlue,
+                        child: Center(
+                          child: Loading(
+                              indicator: BallPulseIndicator(), size: 100.0),
                         ),
-                        getStep(
-                          title: 'Vote',
-                          child: VoteWidget(),
-                          isActive: _currentStep >= 1 ? true : false,
-                        ),
-                      ],
-                      onStepCancel: () {
-                        if (_currentStep <= 0) {
-                          Provider.of<VoteState>(context).activeVote = null;
-                        } else if (_currentStep <= 1) {
-                          Provider.of<VoteState>(context)
-                              .selectedOptionInActiveVote = null;
-                        }
+                      ),
+                    if (voteState.voteList != null)
+                      Expanded(
+                        child: Stepper(
+                          type: StepperType.horizontal,
+                          currentStep: _currentStep,
+                          steps: [
+                            getStep(
+                              title: 'Choose',
+                              child: VoteListWidget(),
+                              isActive: true,
+                            ),
+                            getStep(
+                              title: 'Vote',
+                              child: VoteWidget(),
+                              isActive: _currentStep >= 1 ? true : false,
+                            ),
+                          ],
+                          onStepCancel: () {
+                            if (_currentStep <= 0) {
+                              voteState.activeVote = null;
+                            } else if (_currentStep <= 1) {
+                              voteState.selectedOptionInActiveVote = null;
+                            }
 
-                        setState(() {
-                          _currentStep =
-                              (_currentStep - 1) < 0 ? 0 : _currentStep - 1;
-                        });
-                      },
-                      onStepContinue: () {
-                        if (_currentStep == 0) {
-                          if (step2Required()) {
                             setState(() {
                               _currentStep =
-                                  (_currentStep + 1) > 2 ? 2 : _currentStep + 1;
+                                  (_currentStep - 1) < 0 ? 0 : _currentStep - 1;
                             });
-                          } else {
-                            showSnackBar(
-                                context, 'Please select a vote first!');
-                          }
-                        } else if (_currentStep == 1) {
-                          if (step3Required()) {
-                            // submit vote
-                            markMyVote();
+                          },
+                          onStepContinue: () {
+                            if (_currentStep == 0) {
+                              if (step2Required(voteState)) {
+                                setState(() {
+                                  _currentStep = (_currentStep + 1) > 2
+                                      ? 2
+                                      : _currentStep + 1;
+                                });
+                              } else {
+                                showSnackBar(
+                                    context, 'Please select a vote first!');
+                              }
+                            } else if (_currentStep == 1) {
+                              if (step3Required(voteState)) {
+                                // submit vote
+                                markMyVote(voteState);
 
-                            // Go To Result Screen
-                            Navigator.pushReplacementNamed(context, '/result');
-                          } else {
-                            showSnackBar(context, 'Please mark your vote!');
-                          }
-                        }
-                      },
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ),
+                                // Go To Result Screen
+                                Navigator.pushReplacementNamed(
+                                    context, '/result');
+                              } else {
+                                showSnackBar(context, 'Please mark your vote!');
+                              }
+                            }
+                          },
+                        ),
+                      ),
+                  ],
+                ),
+              );
+            })),
       ),
     );
   }
 
-  bool step2Required() {
-    if (Provider.of<VoteState>(context).activeVote == null) {
+  bool step2Required(VoteState voteState) {
+    if (voteState.activeVote == null) {
       return false;
     }
 
     return true;
   }
 
-  bool step3Required() {
-    if (Provider.of<VoteState>(context).selectedOptionInActiveVote == null) {
+  bool step3Required(VoteState voteState) {
+    if (voteState.selectedOptionInActiveVote == null) {
       return false;
     }
     return true;
@@ -149,11 +149,9 @@ class _HomeScreeenState extends State<HomeScreeen> {
     );
   }
 
-  void markMyVote() {
-    final voteId =
-        Provider.of<VoteState>(context, listen: false).activeVote.voteId;
-    final option = Provider.of<VoteState>(context, listen: false)
-        .selectedOptionInActiveVote;
+  void markMyVote(VoteState voteState) {
+    final voteId = voteState.activeVote.voteId;
+    final option = voteState.selectedOptionInActiveVote;
 
     markVote(voteId, option);
   }
